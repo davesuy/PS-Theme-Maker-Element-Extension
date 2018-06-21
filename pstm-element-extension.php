@@ -53,8 +53,8 @@ add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 				$this->set_provider(
 				array(
 						'name'             => __( 'Standard Elements', ST_PBL ),
-						'file'             => get_theme_root().'/ps-thememaker/library/builder/shortcodes/main.php',
-						'shortcode_dir'    => plugin_dir_path( __FILE__ ).'/shortcodes',
+						'file'             => get_bloginfo('url').'/ps-thememaker/library/builder/shortcodes/main.php',
+						'shortcode_dir'    => plugin_dir_path( __FILE__ ).'shortcodes',
 						'js_shortcode_dir' => 'assets/js/shortcodes',
 				)
 				);
@@ -78,13 +78,16 @@ add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 
 }
 
-// function head_func() {
-// 	//echo '<pre>'.print_r(get_theme_root(), true).'</pre>';
+function head_func() {
 
+	//echo '<pre>'.print_r(get_theme_root(), true).'</pre>';
 
-// $theme = wp_get_theme();
+	$theme = wp_get_theme();
 
-// echo '<pre>'.print_r($theme , true).'</pre>';
-// }
+	echo '<pre>'.print_r(get_bloginfo('url'), true).'</pre>';
+	echo '<pre>'.print_r(plugin_dir_path( __FILE__ ).'shortcodes' , true).'</pre>';
+	echo '<pre>'.print_r(get_theme_root().'/ps-thememaker/library/builder/shortcodes/main.php' , true).'</pre>';
+	
+}
 
-//add_action('wp_head', 'head_func');
+add_action('wp_head', 'head_func');
