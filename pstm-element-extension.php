@@ -78,16 +78,16 @@ add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 
 }
 
-function head_func() {
+// function head_func() {
 
-	//echo '<pre>'.print_r(get_theme_root(), true).'</pre>';
+// 	//echo '<pre>'.print_r(get_theme_root(), true).'</pre>';
 
-	$theme = wp_get_theme();
+// 	$theme = wp_get_theme();
 
-	echo '<pre>'.print_r(get_bloginfo('url'), true).'</pre>';
-	echo '<pre>'.print_r(plugin_dir_path( __FILE__ ).'shortcodes' , true).'</pre>';
-	echo '<pre>'.print_r(get_theme_root().'/ps-thememaker/library/builder/shortcodes/main.php' , true).'</pre>';
+// 	echo '<pre>'.print_r(get_bloginfo('url'), true).'</pre>';
+// 	echo '<pre>'.print_r(plugin_dir_path( __FILE__ ).'shortcodes' , true).'</pre>';
+// 	echo '<pre>'.print_r(get_theme_root().'/ps-thememaker/library/builder/shortcodes/main.php' , true).'</pre>';
 	
-}
+// }
 
-add_action('wp_head', 'head_func');
+// add_action('wp_head', 'head_func');
