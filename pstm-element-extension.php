@@ -49,6 +49,8 @@ add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 		class ST_Pb_Builtin_Shortcode_Extension extends ST_Pb_Addon {
 				public function __construct() {
 
+				add_post_type_support( 'page', 'excerpt' );
+
 				// Addon information
 				$this->set_provider(
 				array(
@@ -66,7 +68,7 @@ add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 				add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
 			}
 
-
+		
 		}
 
 		
@@ -84,10 +86,13 @@ add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 
 // 	$theme = wp_get_theme();
 
-// 	echo '<pre>'.print_r(get_bloginfo('url'), true).'</pre>';
-// 	echo '<pre>'.print_r(plugin_dir_path( __FILE__ ).'shortcodes' , true).'</pre>';
-// 	echo '<pre>'.print_r(get_theme_root().'/ps-thememaker/library/builder/shortcodes/main.php' , true).'</pre>';
+// 	echo '<pre>'.plugins_url( 'shortcodes/blogexcerptallowedtags/assets/css/blogexcerptallowedtags_frontend.css', plugin_basename( __FILE__ ) , true).'</pre>';
+
 	
+
+// 	//echo '<pre>'.print_r(plugin_dir_path( __FILE__ ) , true).'</pre>';
+// 	//echo '<pre>'.print_r(get_theme_root().'/ps-thememaker/library/builder/shortcodes/main.php' , true).'</pre>';
+// //
 // }
 
 // add_action('wp_head', 'head_func');

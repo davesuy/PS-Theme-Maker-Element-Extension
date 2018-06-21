@@ -13,6 +13,15 @@ if (!class_exists('ST_BlogExcerptAllowedTags')):
 		 */
 		public function __construct() {
 			parent::__construct();
+
+			add_action( 'wp_enqueue_scripts', array($this,'enqueue_multiple' ));
+
+		}
+
+		public function enqueue_multiple() {
+
+			wp_enqueue_style( 'style-blogat', plugin_dir_url(  __FILE__).'assets/css/blogexcerptallowedtags_frontend.css');
+			wp_enqueue_script ( 'custom-script-blogat', plugin_dir_url(  __FILE__).'assets/js/blogexcerptallowedtags_frontend.js');
 		}
 		/**
 		 * Configure shortcode.
