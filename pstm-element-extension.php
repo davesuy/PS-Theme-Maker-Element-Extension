@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 $theme = wp_get_theme();
 
 
-if ( 'PS Theme Maker' == $theme->name ) {
+if ( 'PS Theme Maker' == $theme->name || 'PS Theme Maker (BETA)' == $theme->name ) {
 
 add_action( 'st_pb_addon', 'st_pb_builtin_sc_init_extension' );
 
